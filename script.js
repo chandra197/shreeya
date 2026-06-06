@@ -36,7 +36,7 @@ const responseMessage = document.getElementById("responseMessage");
 
 // Replace later with your deployed backend URL
 const API_URL =
-    "https://your-render-app.onrender.com/api/date-response";
+    "https://backend-n3il.onrender.com";
 
 // =====================================
 // SEND RESPONSE TO BACKEND
