@@ -121,6 +121,20 @@ p {
   color: #777;
 }
 
+.slide-item{
+    width:85vw;
+    flex-shrink:0;
+    scroll-snap-align:center;
+}
+
+.slide-item img,
+.slide-item video{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+    border-radius:24px;
+}
+
 @keyframes bounce {
   0%,
   100% {
