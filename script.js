@@ -202,8 +202,6 @@ async function sendResponse(choice) {
 
 yesBtn.addEventListener("click", async () => {
 
-    yesBtn.disabled = true;
-    notNowBtn.disabled = true;
 
     responseMessage.innerHTML = `
         <div class="response-card success">
@@ -222,9 +220,6 @@ yesBtn.addEventListener("click", async () => {
 // =====================================
 
 notNowBtn.addEventListener("click", async () => {
-
-    yesBtn.disabled = true;
-    notNowBtn.disabled = true;
 
     responseMessage.innerHTML = `
         <div class="response-card neutral">
