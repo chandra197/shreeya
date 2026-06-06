@@ -26,6 +26,134 @@ window.addEventListener("click", (e) => {
     }
 });
 
+
+// =====================================
+// STRENGTH SECTION
+// =====================================
+
+const strengthMessage =
+    document.getElementById("strengthMessage");
+
+async function sendStrengthChoice(choice) {
+
+    try {
+
+        await fetch(
+            "https://backend-n3il.onrender.com/api/strength-choice",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+                body: JSON.stringify({
+                    choice
+                })
+            }
+        );
+
+    } catch (err) {
+
+        console.log(err);
+
+    }
+
+}
+
+function showStrengthMessage(type) {
+
+    if (type === "fighter") {
+
+        strengthMessage.innerHTML = `
+            <div class="message-card">
+
+                <p>
+
+                    I know you want to fight
+                    your own battles.
+
+                    <br><br>
+
+                    And honestly,
+                    I'm proud of that.
+
+                    <br><br>
+
+                    Life has thrown a lot at you
+                    recently, yet every day you
+                    still get up and keep going.
+
+                    <br><br>
+
+                    Even when it feels messy.
+                    Even when it feels unfair.
+
+                    <br><br>
+
+                    That strength is something
+                    I admire more than I can
+                    explain.
+
+                    ❤️
+
+                </p>
+
+            </div>
+        `;
+
+        sendStrengthChoice(
+            "FIGHTING_THROUGH_IT"
+        );
+
+    }
+
+    else {
+
+        strengthMessage.innerHTML = `
+            <div class="message-card">
+
+                <p>
+
+                    And if there ever comes
+                    a day when carrying
+                    everything alone feels
+                    too heavy...
+
+                    <br><br>
+
+                    You don't have to.
+
+                    <br><br>
+
+                    Not because you're weak.
+
+                    Not because you're incapable.
+
+                    <br><br>
+
+                    But because nobody is meant
+                    to carry every burden alone.
+
+                    <br><br>
+
+                    If you ever need me,
+                    I'll be here.
+
+                    ❤️
+
+                </p>
+
+            </div>
+        `;
+
+        sendStrengthChoice(
+            "OPEN_TO_SUPPORT"
+        );
+
+    }
+
+}
+
 // =====================================
 // DATE BUTTONS
 // =====================================
