@@ -169,7 +169,7 @@ setInterval(() => {
     heroSlider.scrollLeft +=
         300 * scrollDirection;
 
-}, 4000);
+}, 40000);
 
 // =====================================
 // GALLERY FULLSCREEN VIEW
