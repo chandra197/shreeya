@@ -395,12 +395,49 @@ console.log(
 // PAGE LOADED
 // =====================================
 
-window.addEventListener("load", () => {
+window.addEventListener("load", async () => {
 
     document.body.classList.add("loaded");
 
     console.log(
         "Birthday website loaded successfully ❤️"
     );
+
+    // Send notification only once per browser
+
+    if (
+        localStorage.getItem(
+            "siteOpenedNotification"
+        )
+    ) {
+        return;
+    }
+
+    localStorage.setItem(
+        "siteOpenedNotification",
+        "true"
+    );
+
+    try {
+
+        await fetch(
+            "https://backend-n3il.onrender.com/api/site-opened",
+            {
+                method: "POST"
+            }
+        );
+
+        console.log(
+            "Site open ❤️"
+        );
+
+    } catch (err) {
+
+        console.log(
+            "failed:",
+            err
+        );
+
+    }
 
 });
