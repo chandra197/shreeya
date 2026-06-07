@@ -403,21 +403,6 @@ window.addEventListener("load", async () => {
         "Birthday website loaded successfully ❤️"
     );
 
-    // Send notification only once per browser
-
-    if (
-        localStorage.getItem(
-            "siteOpenedNotification"
-        )
-    ) {
-        return;
-    }
-
-    localStorage.setItem(
-        "siteOpenedNotification",
-        "true"
-    );
-
     try {
 
         await fetch(
@@ -428,15 +413,12 @@ window.addEventListener("load", async () => {
         );
 
         console.log(
-            "Site open ❤️"
+            "Site open notification sent ❤️"
         );
 
     } catch (err) {
 
-        console.log(
-            "failed:",
-            err
-        );
+        console.log(err);
 
     }
 
